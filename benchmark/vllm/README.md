@@ -94,14 +94,18 @@ users can also directly run the vLLm benchmark scripts and change the benchmarki
 | pyt_vllm_command-r7b                   | [CohereLabs/c4ai-command-r7b-12-2024](https://huggingface.co/CohereLabs/c4ai-command-r7b-12-2024) |
 | pyt_vllm_deepseek-r1                   | [deepseek-ai/DeepSeek-R1-0528](https://huggingface.co/deepseek-ai/DeepSeek-R1-0528) |
 | pyt_vllm_deepseek-r1_fp4               | [amd/DeepSeek-R1-0528-MXFP4](https://huggingface.co/amd/DeepSeek-R1-0528-MXFP4) |
+| pyt_vllm_deepseek-v3.2                 | [deepseek-ai/DeepSeek-V3.2](https://huggingface.co/deepseek-ai/DeepSeek-V3.2) |
 | pyt_vllm_deepseek-v3.2_fp4             | [amd/DeepSeek-V3.2-MXFP4](https://huggingface.co/amd/DeepSeek-V3.2-MXFP4) |
 | pyt_vllm_deepseek-v4-flash             | [deepseek-ai/DeepSeek-V4-Flash](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash) |
 | pyt_vllm_deepseek-v4-pro               | [deepseek-ai/DeepSeek-V4-Pro](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro) |
+| pyt_vllm_deepseek-v4.1-flash           | [deepseek-ai/DeepSeek-V4.1-Flash](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash) |
 | pyt_vllm_glm-5.1_fp8                   | [zai-org/GLM-5.1-FP8](https://huggingface.co/zai-org/GLM-5.1-FP8) |
 | pyt_vllm_glm-5.1_fp4                   | [amd/GLM-5.1-MXFP4](https://huggingface.co/amd/GLM-5.1-MXFP4) |
 | pyt_vllm_glm-5.2_fp8                   | [zai-org/GLM-5.2-FP8](https://huggingface.co/zai-org/GLM-5.2-FP8) |
 | pyt_vllm_glm-5.2_fp4                   | [amd/GLM-5.2-MXFP4](https://huggingface.co/amd/GLM-5.2-MXFP4) |
-| pyt_vllm_gpt-oss-20b                   | [openai/gpt-oss-20b](https://huggingface.co/openai/gpt-oss-20b) |
+| pyt_vllm_glm-5.2_fp8                   | [zai-org/GLM-5.2-FP8](https://huggingface.co/zai-org/GLM-5.2-FP8) |
+| pyt_vllm_glm-5.3                       | [zai-org/GLM-5.3](https://huggingface.co/zai-org/GLM-5.3) |
+| pyt_vllm_glm-5.3_fp4                   | [amd/GLM-5.3-Quark-MXFP4-AttnFP8](https://huggingface.co/amd/GLM-5.3-Quark-MXFP4-AttnFP8) |
 | pyt_vllm_gpt-oss-120b                  | [openai/gpt-oss-120b](https://huggingface.co/openai/gpt-oss-120b) |
 | pyt_vllm_gpt-oss-120b_w4a8             | [amd/gpt-oss120b-w-mxfp4-a-fp8](https://huggingface.co/amd/gpt-oss120b-w-mxfp4-a-fp8) |
 | pyt_vllm_kimi-k2.6                     | [moonshotai/Kimi-K2.6](https://huggingface.co/moonshotai/Kimi-K2.6) |
@@ -115,40 +119,15 @@ users can also directly run the vLLm benchmark scripts and change the benchmarki
 | pyt_vllm_llama-3.3-70b                 | [meta-llama/Llama-3.3-70B-Instruct](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct) |
 | pyt_vllm_llama-3.3-70b_fp8             | [amd/Llama-3.3-70B-Instruct-FP8-KV](https://huggingface.co/amd/Llama-3.3-70B-Instruct-FP8-KV) |
 | pyt_vllm_llama-3.3-70b_fp4             | [amd/Llama-3.3-70B-Instruct-MXFP4-Preview](https://huggingface.co/amd/Llama-3.3-70B-Instruct-MXFP4-Preview) |
-| pyt_vllm_minimax-m2.7                  | [MiniMaxAI/MiniMax-M2.7](https://huggingface.co/MiniMaxAI/MiniMax-M2.7) |
-| pyt_vllm_minimax-m2.7_fp4              | [amd/MiniMax-M2.7-MXFP4](https://huggingface.co/amd/MiniMax-M2.7-MXFP4) |
 | pyt_vllm_minimax-m3_mxfp8              | [MiniMaxAI/MiniMax-M3-MXFP8](https://huggingface.co/MiniMaxAI/MiniMax-M3-MXFP8) |
 | pyt_vllm_minimax-m3_fp4                | [amd/MiniMax-M3-MXFP4](https://huggingface.co/amd/MiniMax-M3-MXFP4) |
 | pyt_vllm_mixtral-8x7b                  | [mistralai/Mixtral-8x7B-Instruct-v0.1](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1) |
 | pyt_vllm_mixtral-8x7b_fp8              | [amd/Mixtral-8x7B-Instruct-v0.1-FP8-KV](https://huggingface.co/amd/Mixtral-8x7B-Instruct-v0.1-FP8-KV) |
 | pyt_vllm_mixtral-8x22b                 | [mistralai/Mixtral-8x22B-Instruct-v0.1](https://huggingface.co/mistralai/Mixtral-8x22B-Instruct-v0.1) |
 | pyt_vllm_mixtral-8x22b_fp8             | [amd/Mixtral-8x22B-Instruct-v0.1-FP8-KV](https://huggingface.co/amd/Mixtral-8x22B-Instruct-v0.1-FP8-KV) |
-| pyt_vllm_qwen3-8b                      | [Qwen/Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) |
-| pyt_vllm_qwen3-32b                     | [Qwen/Qwen3-32B](https://huggingface.co/Qwen/Qwen3-32B) |
-| pyt_vllm_qwen3-30b-a3b                 | [Qwen/Qwen3-30B-A3B-Thinking-2507](https://huggingface.co/Qwen/Qwen3-30B-A3B-Thinking-2507) |
-| pyt_vllm_qwen3-30b-a3b_fp8             | [Qwen/Qwen3-30B-A3B-Thinking-2507-FP8](https://huggingface.co/Qwen/Qwen3-30B-A3B-Thinking-2507-FP8) |
-| pyt_vllm_qwen3-235b-a22b               | [Qwen/Qwen3-235B-A22B-Thinking-2507](https://huggingface.co/Qwen/Qwen3-235B-A22B-Thinking-2507) |
-| pyt_vllm_qwen3-235b-a22b_fp8           | [Qwen/Qwen3-235B-A22B-Thinking-2507-FP8](https://huggingface.co/Qwen/Qwen3-235B-A22B-Thinking-2507-FP8) |
 | pyt_vllm_qwen3.5-397b-a17b             | [Qwen/Qwen3.5-397B-A17B](https://huggingface.co/Qwen/Qwen3.5-397B-A17B) |
 | pyt_vllm_qwen3.5-397b-a17b_fp8         | [Qwen/Qwen3.5-397B-A17B-FP8](https://huggingface.co/Qwen/Qwen3.5-397B-A17B-FP8) |
-
->[!NOTE]
->`pyt_vllm_kimi-k3` is the one exception to the shared Docker image above. It builds from
->the model-specific `vllm/vllm-openai-rocm:kimi-k3` image via
->[docker/pyt_vllm_kimi_k3.ubuntu.amd.Dockerfile](../../docker/pyt_vllm_kimi_k3.ubuntu.amd.Dockerfile).
->It needs an 8x MI350X/MI355X (gfx950) node — the ~1680 GB minimum footprint does not fit a
->single 8x MI300X node — and the checkpoint is ~1.56 TB, so make sure `HF_HUB_CACHE` has room.
->It is deliberately not tagged `vllm_default`; run it explicitly:
->
->```sh
->madengine run --tags pyt_vllm_kimi-k3 --keep-model-dir --live-output
->```
->
->The config tracks the [MI355X recipe profile](https://recipes.vllm.ai/moonshotai/Kimi-K3?hardware=mi355x)
->for a text-only serving run, with two intentional deviations: MAD adds
->`--no-enable-prefix-caching` for benchmark hygiene (as it does for every model here), and the
->gsm8k accuracy stage is disabled because K3's always-on reasoning is returned inline over
->`/v1/completions` and exhausts the generation budget.
+| pyt_vllm_qwen3.8-2.4t-a95b_fp4         | [amd/Qwen3.8-2.4T-A95B-Quark-MXFP4](https://huggingface.co/amd/Qwen3.8-2.4T-A95B-Quark-MXFP4)  |
 
 
 ### Standalone benchmarking              

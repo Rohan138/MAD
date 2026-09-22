@@ -150,23 +150,22 @@
         "args": "--model_repo deepseek-ai/DeepSeek-V4-Pro --config configs/default.yaml"
     },
     {
-        "name": "pyt_vllm_gpt-oss-20b",
+        "name": "pyt_vllm_deepseek-v4.1-flash",
         "dockerfile": "../../docker/pyt_vllm",
         "scripts": "run.sh",
-        "url": "",
         "data": "huggingface",
         "n_gpus": "-1",
         "owner": "mad.support@amd.com",
         "training_precision": "",
-        "multiple_results": "perf_gpt-oss-20b.csv",
+        "multiple_results": "perf_DeepSeek-V4.1-Flash.csv",
         "tags": [
             "pyt",
             "vllm",
-            "vllm_extended",
+            "vllm_default",
             "inference"
         ],
         "timeout": -1,
-        "args": "--model_repo openai/gpt-oss-20b --config configs/extended.yaml"
+        "args": "--model_repo deepseek-ai/DeepSeek-V4.1-Flash --config configs/default.yaml"
     },
     {
         "name": "pyt_vllm_gpt-oss-120b",
@@ -281,6 +280,24 @@
         "args": "--model_repo amd/GLM-5.2-MXFP4 --config configs/default.yaml"
     },
     {
+        "name": "pyt_vllm_glm-5.3",
+        "dockerfile": "../../docker/pyt_vllm",
+        "scripts": "run.sh",
+        "data": "huggingface",
+        "n_gpus": "-1",
+        "owner": "mad.support@amd.com",
+        "training_precision": "",
+        "multiple_results": "perf_GLM-5.3.csv",
+        "tags": [
+            "pyt",
+            "vllm",
+            "vllm_default",
+            "inference"
+        ],
+        "timeout": -1,
+        "args": "--model_repo zai-org/GLM-5.3 --config configs/default.yaml"
+    },
+    {
         "name": "pyt_vllm_kimi-k2.6",
         "dockerfile": "../../docker/pyt_vllm",
         "scripts": "run.sh",
@@ -321,7 +338,7 @@
     },
     {
         "name": "pyt_vllm_kimi-k3",
-        "dockerfile": "../../docker/pyt_vllm_kimi_k3",
+        "dockerfile": "../../docker/pyt_vllm",
         "scripts": "run.sh",
         "url": "",
         "data": "huggingface",
@@ -332,6 +349,7 @@
         "tags": [
             "pyt",
             "vllm",
+            "vllm_default",
             "inference"
         ],
         "timeout": -1,
@@ -491,43 +509,6 @@
         "timeout": -1,
         "skip_gpu_arch": "gfx942",
         "args": "--model_repo amd/Llama-3.3-70B-Instruct-MXFP4-Preview --config configs/default.yaml"
-    },
-    {
-        "name": "pyt_vllm_minimax-m2.7",
-        "dockerfile": "../../docker/pyt_vllm",
-        "scripts": "run.sh",
-        "data": "huggingface",
-        "n_gpus": "-1",
-        "owner": "mad.support@amd.com",
-        "training_precision": "",
-        "multiple_results": "perf_MiniMax-M2.7.csv",
-        "tags": [
-            "pyt",
-            "vllm",
-            "vllm_extended",
-            "inference"
-        ],
-        "timeout": -1,
-        "args": "--model_repo MiniMaxAI/MiniMax-M2.7 --config configs/extended.yaml"
-    },
-    {
-        "name": "pyt_vllm_minimax-m2.7_fp4",
-        "dockerfile": "../../docker/pyt_vllm",
-        "scripts": "run.sh",
-        "data": "huggingface",
-        "n_gpus": "-1",
-        "owner": "mad.support@amd.com",
-        "training_precision": "",
-        "multiple_results": "perf_MiniMax-M2.7-MXFP4.csv",
-        "tags": [
-            "pyt",
-            "vllm",
-            "vllm_extended",
-            "inference"
-        ],
-        "timeout": -1,
-        "skip_gpu_arch": "gfx942",
-        "args": "--model_repo amd/MiniMax-M2.7-MXFP4 --config configs/extended.yaml"
     },
     {
         "name": "pyt_vllm_minimax-m3_mxfp8",
