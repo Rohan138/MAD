@@ -14,7 +14,7 @@ This Docker image packages vLLM with PyTorch for AMD Instinct™ MI300X, MI325X,
 accelerators. It includes:
 
 -   ✅ ROCm™ 7.2.3
--   ✅ vLLM 0.28.0
+-   ✅ vLLM 0.30.0
 -   ✅ PyTorch 2.12.0 (2.12.0+git6bbd260)
 -   ✅ hipBLASLt 1.0
 
@@ -58,7 +58,7 @@ To override the benchmark configs, specify a certain benchmark to use, or add yo
 The following command pulls the Docker image from Docker Hub.
 
 ```sh
-docker pull vllm/vllm-openai-rocm:v0.28.0
+docker pull vllm/vllm-openai-rocm:v0.30.0
 ```
 
 ### MAD-integrated benchmarking
@@ -87,6 +87,8 @@ users can also directly run the vLLm benchmark scripts and change the benchmarki
 
 >[!NOTE]
 >The MXFP4 models are only supported on the gfx950 architecture i.e. MI350X/MI355X accelerators.	
+>
+>Full Kimi K3 (`pyt_vllm_kimi-k3`) needs 8x MI325X (256 GB per GPU) or 8x MI355X; it does not fit an 8x MI300X node.
 
 | MAD model name                         | Model repo                             |
 | -------------------------------------- | -------------------------------------- |
@@ -97,20 +99,21 @@ users can also directly run the vLLm benchmark scripts and change the benchmarki
 | pyt_vllm_deepseek-v3.2                 | [deepseek-ai/DeepSeek-V3.2](https://huggingface.co/deepseek-ai/DeepSeek-V3.2) |
 | pyt_vllm_deepseek-v3.2_fp4             | [amd/DeepSeek-V3.2-MXFP4](https://huggingface.co/amd/DeepSeek-V3.2-MXFP4) |
 | pyt_vllm_deepseek-v4-flash             | [deepseek-ai/DeepSeek-V4-Flash](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash) |
+| pyt_vllm_deepseek-v4-flash_fp4         | [amd/DeepSeek-V4-Flash-MXFP4](https://huggingface.co/amd/DeepSeek-V4-Flash-MXFP4) |
 | pyt_vllm_deepseek-v4-pro               | [deepseek-ai/DeepSeek-V4-Pro](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro) |
-| pyt_vllm_deepseek-v4.1-flash           | [deepseek-ai/DeepSeek-V4.1-Flash](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash) |
-| pyt_vllm_glm-5.1_fp8                   | [zai-org/GLM-5.1-FP8](https://huggingface.co/zai-org/GLM-5.1-FP8) |
-| pyt_vllm_glm-5.1_fp4                   | [amd/GLM-5.1-MXFP4](https://huggingface.co/amd/GLM-5.1-MXFP4) |
-| pyt_vllm_glm-5.2_fp8                   | [zai-org/GLM-5.2-FP8](https://huggingface.co/zai-org/GLM-5.2-FP8) |
-| pyt_vllm_glm-5.2_fp4                   | [amd/GLM-5.2-MXFP4](https://huggingface.co/amd/GLM-5.2-MXFP4) |
-| pyt_vllm_glm-5.2_fp8                   | [zai-org/GLM-5.2-FP8](https://huggingface.co/zai-org/GLM-5.2-FP8) |
+| pyt_vllm_deepseek-v4-pro_fp4           | [amd/DeepSeek-V4-Pro-MXFP4](https://huggingface.co/amd/DeepSeek-V4-Pro-MXFP4) |
+| pyt_vllm_deepseek-v4.1-flash           | [deepseek-ai/DeepSeek-V4.1-Flash](https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash) |
+| pyt_vllm_deepseek-v4.1-flash_fp4       | [amd/DeepSeek-V4.1-Flash-Quark-MXFP4](https://huggingface.co/amd/DeepSeek-V4.1-Flash-Quark-MXFP4) |
 | pyt_vllm_glm-5.3                       | [zai-org/GLM-5.3](https://huggingface.co/zai-org/GLM-5.3) |
 | pyt_vllm_glm-5.3_fp4                   | [amd/GLM-5.3-Quark-MXFP4-AttnFP8](https://huggingface.co/amd/GLM-5.3-Quark-MXFP4-AttnFP8) |
+| pyt_vllm_glm-5.3-flash                 | [zai-org/GLM-5.3-Flash](https://huggingface.co/zai-org/GLM-5.3-Flash) |
+| pyt_vllm_glm-5.3-flash_fp4             | [amd/GLM-5.3-Flash-Quark-MXFP4](https://huggingface.co/amd/GLM-5.3-Flash-Quark-MXFP4) |
 | pyt_vllm_gpt-oss-120b                  | [openai/gpt-oss-120b](https://huggingface.co/openai/gpt-oss-120b) |
 | pyt_vllm_gpt-oss-120b_w4a8             | [amd/gpt-oss120b-w-mxfp4-a-fp8](https://huggingface.co/amd/gpt-oss120b-w-mxfp4-a-fp8) |
 | pyt_vllm_kimi-k2.6                     | [moonshotai/Kimi-K2.6](https://huggingface.co/moonshotai/Kimi-K2.6) |
 | pyt_vllm_kimi-k2.6_fp4                 | [amd/Kimi-K2.6-MXFP4](https://huggingface.co/amd/Kimi-K2.6-MXFP4) |
 | pyt_vllm_kimi-k3                       | [moonshotai/Kimi-K3](https://huggingface.co/moonshotai/Kimi-K3) |
+| pyt_vllm_kimi-k3_fp4                   | [amd/Kimi-K3-Quark-MXFP4-AttnFP8](https://huggingface.co/amd/Kimi-K3-Quark-MXFP4-AttnFP8) |
 | pyt_vllm_llama-3.1-8b                  | [meta-llama/Llama-3.1-8B-Instruct](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) |
 | pyt_vllm_llama-3.1-8b_fp8              | [amd/Llama-3.1-8B-Instruct-FP8-KV](https://huggingface.co/amd/Llama-3.1-8B-Instruct-FP8-KV) |
 | pyt_vllm_llama-3.1-405b                | [meta-llama/Llama-3.1-405B-Instruct](https://huggingface.co/meta-llama/Llama-3.1-405B-Instruct) |
@@ -125,9 +128,12 @@ users can also directly run the vLLm benchmark scripts and change the benchmarki
 | pyt_vllm_mixtral-8x7b_fp8              | [amd/Mixtral-8x7B-Instruct-v0.1-FP8-KV](https://huggingface.co/amd/Mixtral-8x7B-Instruct-v0.1-FP8-KV) |
 | pyt_vllm_mixtral-8x22b                 | [mistralai/Mixtral-8x22B-Instruct-v0.1](https://huggingface.co/mistralai/Mixtral-8x22B-Instruct-v0.1) |
 | pyt_vllm_mixtral-8x22b_fp8             | [amd/Mixtral-8x22B-Instruct-v0.1-FP8-KV](https://huggingface.co/amd/Mixtral-8x22B-Instruct-v0.1-FP8-KV) |
-| pyt_vllm_qwen3.5-397b-a17b             | [Qwen/Qwen3.5-397B-A17B](https://huggingface.co/Qwen/Qwen3.5-397B-A17B) |
 | pyt_vllm_qwen3.5-397b-a17b_fp8         | [Qwen/Qwen3.5-397B-A17B-FP8](https://huggingface.co/Qwen/Qwen3.5-397B-A17B-FP8) |
-| pyt_vllm_qwen3.8-2.4t-a95b_fp4         | [amd/Qwen3.8-2.4T-A95B-Quark-MXFP4](https://huggingface.co/amd/Qwen3.8-2.4T-A95B-Quark-MXFP4)  |
+| pyt_vllm_qwen3.5-397b-a17b_fp4         | [amd/Qwen3.5-397B-A17B-MXFP4](https://huggingface.co/amd/Qwen3.5-397B-A17B-MXFP4) |
+| pyt_vllm_qwen3.8-2.4t-a95b_fp4         | [amd/Qwen3.8-2.4T-A95B-Quark-MXFP4](https://huggingface.co/amd/Qwen3.8-2.4T-A95B-Quark-MXFP4) |
+| pyt_vllm_qwen3.8-27b_fp8               | [Qwen/Qwen3.8-27B-FP8](https://huggingface.co/Qwen/Qwen3.8-27B-FP8) |
+| pyt_vllm_qwen3.8-flash-next_fp8        | [Qwen/Qwen3.8-Flash-Next-FP8](https://huggingface.co/Qwen/Qwen3.8-Flash-Next-FP8) |
+| pyt_vllm_qwen3.8-flash-next_fp4        | [amd/Qwen3.8-Flash-Next-Quark-MXFP4](https://huggingface.co/amd/Qwen3.8-Flash-Next-Quark-MXFP4) |
 
 
 ### Standalone benchmarking              
@@ -137,9 +143,9 @@ Users also can run the benchmark tool after they launch a Docker container. For 
 
 #### Docker launch
 ```sh
-docker pull vllm/vllm-openai-rocm:v0.28.0
+docker pull vllm/vllm-openai-rocm:v0.30.0
 
-docker run -it --device=/dev/kfd --device=/dev/dri --group-add video --shm-size 16G --security-opt seccomp=unconfined --security-opt apparmor=unconfined --cap-add=SYS_PTRACE -v $(pwd):/workspace --env VLLM_ROCM_USE_AITER=1 --env HUGGINGFACE_HUB_CACHE=/workspace --name test vllm/vllm-openai-rocm:v0.28.0
+docker run -it --device=/dev/kfd --device=/dev/dri --group-add video --shm-size 16G --security-opt seccomp=unconfined --security-opt apparmor=unconfined --cap-add=SYS_PTRACE -v $(pwd):/workspace --env VLLM_ROCM_USE_AITER=1 --env HUGGINGFACE_HUB_CACHE=/workspace --name test vllm/vllm-openai-rocm:v0.30.0
 ```
 
 >[!NOTE]
@@ -354,6 +360,15 @@ owners and are only mentioned for informative purposes.   
 ## Changelog
 ----------
 This release note summarizes notable changes since the previous docker release.
+
+v0.30.0
+- Added to the default suite: DeepSeek-V4.1-Flash (with MXFP4), DeepSeek-V4-Flash and V4-Pro MXFP4, GLM-5.3 and GLM-5.3-Flash (each with MXFP4),
+  Kimi-K3 MXFP4, Qwen3.8-Flash-Next (FP8 and MXFP4), and Qwen3.8-2.4T-A95B MXFP4
+- Added Qwen3.8-27B FP8 to the extended suite
+- Qwen3.5-397B-A17B now runs FP8 and MXFP4 (BF16 dropped)
+- Kimi K3 now uses the shared vLLM image and runs in the default suite at 1k/1k (MI325X or MI355X)
+- Moved Mixtral 8x22B to the extended suite (concurrency 1)
+- Dropped GLM-5.1, GLM-5.2, gpt-oss-20b, MiniMax-M2.7 (BF16 and MXFP4), and Qwen3 8B, 32B, 30B-A3B, and 235B-A22B
 
 v0.28.0
 - Added Cohere Command R7B and Command A+ to the extended benchmark suite

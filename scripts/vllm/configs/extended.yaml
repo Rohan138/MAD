@@ -1,8 +1,8 @@
 # 1k 1k mc1
 - benchmark: serving
   model:
-    CohereLabs/c4ai-command-r7b-12-2024
-  tp: 1
+    CohereLabs/command-a-plus-05-2026-bf16
+  tp: 8
   inp: 1024
   out: 1024
   dtype: auto
@@ -12,8 +12,8 @@
 
 - benchmark: serving
   model:
-    CohereLabs/command-a-plus-05-2026-bf16
-  tp: 8
+    CohereLabs/c4ai-command-r7b-12-2024
+  tp: 1
   inp: 1024
   out: 1024
   dtype: auto
@@ -60,7 +60,7 @@
   inp: 1024
   out: 1024
   dtype: auto
-  max_concurrency: 1 8 32 128
+  max_concurrency: 1
   env:
     VLLM_ROCM_USE_AITER: 1
   arch_overrides:
@@ -70,8 +70,8 @@
 # Keep Qwen in bf16 on gfx942; Qwen 3.5 exceeds fp16 boundaries and breaks accuracy
 - benchmark: serving
   model:
-    Qwen/Qwen3.5-397B-A17B
     Qwen/Qwen3.5-397B-A17B-FP8
+    amd/Qwen3.5-397B-A17B-MXFP4
   tp: 8
   inp: 1024
   out: 1024
@@ -81,3 +81,14 @@
     VLLM_ROCM_USE_AITER: 1
   extra_args:
     --enable-expert-parallel: True
+
+- benchmark: serving
+  model:
+    Qwen/Qwen3.8-27B-FP8
+  tp: 1
+  inp: 1024
+  out: 1024
+  dtype: auto
+  max_concurrency: 1
+  env:
+    VLLM_ROCM_USE_AITER: 1
